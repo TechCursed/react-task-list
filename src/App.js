@@ -1,5 +1,6 @@
 
 import {useState} from 'react';
+import './App.css'
 
 const App = () => {
   
@@ -27,29 +28,42 @@ const App = () => {
   };
 
   return (
-    <div>
 
-      {/* form has the method onsubmit for post submission functionalities  */}
-      
-      <form onSubmit={handleSubmit}>
+    <div className="App">
+      <div className="container">
 
-        <input type="text" 
-        placeholder="Enter Items" 
+       <h1> React Tasks App </h1>
+        <form  onSubmit={handleSubmit}>
 
-        // onchange is required to eep track of entered values in the form
+    <input 
+    className="text-inp"
+    type="text" 
+    placeholder="Enter Items" 
 
-        onChange={(e) => setItem(e.target.value)}
-        />
+    // onchange is required to eep track of entered values in the form
 
-        <button type="submit">Add Items</button>
-      </form>
+    onChange={(e) => setItem(e.target.value)}
+    />
 
-      {
-        list.map((li) => {
-          return <h3>{li.item}</h3>
-        })
-      }
+  <button className="btn-submit" type="submit">Add Items</button>
+  </form>
 
+    {
+      list.map((li) => {
+      return ( 
+        <ul className="item-list">
+          <li className='single'>
+          <span className='list-text'>{li.item}</span>
+          <button className="btn-edit" type="submit">Edit</button>
+          <button className="btn-delete" type="submit">Delete</button>
+          </li>
+
+        </ul>
+    
+  )
+})
+} 
+    </div>
     </div>
   );
 };
