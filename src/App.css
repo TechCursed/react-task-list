@@ -17,7 +17,7 @@ h2{
 
 .container{
   display: flex;
-  width: 400px;
+  width: 300px;
   min-height: 60vh;
   flex-direction: column;
   padding: 20px;
